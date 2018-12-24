@@ -1,0 +1,15 @@
+# prueba
+URL acceso al recurso punto dos
+http://localhost:13531/dos/webresources/twostring
+metodo POST
+entrada en formato json {"s1":"hola","s2":"adios"}
+salida formato jso {"respuesta": true}
+
+
+
+
+URL acceso al recurso punto tres
+http://localhost:13531/puntotres-1.0/webresources/validar
+metodo POST
+entrada en formato json ejemplo {"arreglo":[4, 3, 1, 2]}
+salida formato json {"cantidad": 3}
