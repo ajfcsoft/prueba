@@ -1,0 +1,10 @@
+SELECT p.id, p.descripcion, p.stock, p.valor, 
+       SUM(v.cantidad) AS total_ventas,
+       SUM(v.cantidad)*p.valor AS total_ventas,
+       (SELECT SUM(cantidad)*p.valor FROM compras WHERE id_producto = p.id) AS total_compras,
+       (p.valor-p.costo)*SUM(v.cantidad) AS total_ganancia_ventas
+FROM   productos p,  ventas v
+WHERE  p.id =  v.id_producto
+AND    v.fecha BETWEEN '2018/02/01' 
+               AND '2019/02/28'
+GROUP BY v.id_producto
